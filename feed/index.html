@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feed | Memo</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+
+  <body class="min-h-screen bg-[#f6f5ff] text-[#2b2b2b] font-sans">
+    <header
+      class="sticky top-0 z-30 backdrop-blur bg-cover bg-[center_45%] border-b border-black/10 text-white"
+      style="background-image: url('/images/login-bakgrunn2.jpg')"
+    >
+      <nav
+        class="relative mx-auto max-w-6xl px-4 h-16 flex items-center gap-4 z-10"
+      >
+        <a
+          href="/feed/index.html"
+          class="font-semibold text-white hover:text-[#cfc8ff] transition"
+        >
+          Memo
+        </a>
+
+        <form class="hidden sm:flex flex-1">
+          <label for="q" class="sr-only">Search</label>
+          <input
+            id="q"
+            type="search"
+            placeholder="Search..."
+            class="w-full rounded-full border border-white/40 bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-[#c8c1ff] px-4 py-2 text-sm"
+          />
+        </form>
+
+        <div class="ml-auto flex items-center gap-2">
+          <a
+            href="/profile/index.html"
+            class="px-4 py-2 rounded-lg bg-[#edeaff] text-[#6f5ee6] font-medium hover:bg-[#e1dcff] transition"
+          >
+            Profile
+          </a>
+          <a
+            href="/index.html"
+            class="px-4 py-2 rounded-lg border border-white/40 text-white/90 font-medium hover:bg-white/10 hover:border-white/60 transition"
+          >
+            Logout
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-4 py-8 space-y-6">
+      <div class="grid lg:grid-cols-3 gap-6">
+        <section class="lg:col-span-2 space-y-6">
+          <section
+            class="rounded-2xl bg-white/70 backdrop-blur border border-black/5 shadow-sm p-5"
+          >
+            <h2 class="font-semibold mb-3">Create a post</h2>
+
+            <form class="space-y-4" action="#" method="POST">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm mb-1" for="title">Title</label>
+                  <input
+                    id="title"
+                    name="title"
+                    type="text"
+                    class="w-full rounded-lg border border-[#e7e6ff] bg-white/50 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#c8c1ff]"
+                    required
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm mb-1" for="imgUrl"
+                    >Image URL (optional)</label
+                  >
+                  <input
+                    id="imgUrl"
+                    name="image"
+                    type="url"
+                    placeholder="https://..."
+                    class="w-full rounded-lg border border-[#e7e6ff] bg-white/50 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#c8c1ff]"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm mb-1" for="content">Content</label>
+                <textarea
+                  id="content"
+                  name="content"
+                  rows="5"
+                  class="w-full rounded-lg border border-[#e7e6ff] bg-white/50 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#c8c1ff]"
+                  placeholder="What's on your mind?"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <label class="flex items-center gap-2 text-sm">
+                  <input type="checkbox" class="accent-[#6f5ee6]" />
+                  <span>Allow comments</span>
+                </label>
+
+                <button
+                  type="submit"
+                  class="px-5 py-2 rounded-lg bg-[#6f5ee6] text-white text-sm font-medium hover:bg-[#5c4dd1] transition"
+                >
+                  Post
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <div class="flex justify-end">
+            <div class="relative">
+              <select
+                aria-label="Sort posts"
+                class="appearance-none bg-[#edeaff] text-[#6f5ee6] text-sm font-medium rounded-full py-2 pl-4 pr-8 border border-[#e1dcff] hover:bg-[#e1dcff] focus:outline-none focus:ring-2 focus:ring-[#b7a7ff] transition"
+              >
+                <option>Newest</option>
+                <option>Most liked</option>
+                <option>Oldest</option>
+              </select>
+              <svg
+                class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#6f5ee6]"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m19 9-7 7-7-7"
+                />
+              </svg>
+            </div>
+          </div>
+          <section class="space-y-6">
+            <article
+              class="rounded-2xl bg-white/70 backdrop-blur border border-black/5 shadow-sm overflow-hidden"
+            >
+              <div class="p-5">
+                <div class="flex items-center gap-3">
+                  <img
+                    src="/public/images/Caroline.JPG"
+                    alt=""
+                    class="h-10 w-10 rounded-full"
+                  />
+                  <div>
+                    <p class="text-sm font-medium">Nina Olsen</p>
+                    <p class="text-xs text-black/60">2h · Oslo, Norway</p>
+                  </div>
+                </div>
+
+                <h3 class="mt-4 font-medium">Happy Morning</h3>
+                <p class="mt-1 text-sm text-black/80">
+                  Starting the day with oatmeal and tea💜
+                </p>
+
+                <div
+                  class="mt-3 overflow-hidden rounded-xl bg-[#f7f6ff] aspect-[16/9] grid place-items-center"
+                >
+                  <span class="text-xs text-black/50">Post image</span>
+                </div>
+
+                <div class="mt-5 flex gap-3">
+                  <button
+                    class="flex-1 py-2 rounded-lg bg-[#edeaff] text-[#6f5ee6] text-sm font-medium hover:bg-[#e1dcff] transition"
+                  >
+                    Like
+                  </button>
+                  <button
+                    class="flex-1 py-2 rounded-lg bg-[#edeaff] text-[#6f5ee6] text-sm font-medium hover:bg-[#e1dcff] transition"
+                  >
+                    Comment
+                  </button>
+                  <button
+                    class="flex-1 py-2 rounded-lg bg-[#edeaff] text-[#6f5ee6] text-sm font-medium hover:bg-[#e1dcff] transition"
+                  >
+                    Share
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="rounded-2xl bg-white/70 backdrop-blur border border-black/5 shadow-sm overflow-hidden"
+            >
+              <div class="p-5">
+                <div class="flex items-center gap-3">
+                  <img
+                    src="/public/images/login-bakgrunn.jpg"
+                    alt=""
+                    class="h-10 w-10 rounded-full"
+                  />
+                  <div>
+                    <p class="text-sm font-medium">Maia Hansen</p>
+                    <p class="text-xs text-black/60">5h · Bergen, Norway</p>
+                  </div>
+                </div>
+
+                <h3 class="mt-4 font-medium">Sea air & sunsets</h3>
+                <p class="mt-1 text-sm text-black/80">
+                  Nothing resets the week like summer walk by the sea.
+                </p>
+
+                <div class="mt-5 flex gap-3">
+                  <button
+                    class="flex-1 py-2 rounded-lg bg-[#edeaff] text-[#6f5ee6] text-sm font-medium hover:bg-[#e1dcff] transition"
+                  >
+                    Like
+                  </button>
+                  <button
+                    class="flex-1 py-2 rounded-lg bg-[#edeaff] text-[#6f5ee6] text-sm font-medium hover:bg-[#e1dcff] transition"
+                  >
+                    Comment
+                  </button>
+                  <button
+                    class="flex-1 py-2 rounded-lg bg-[#edeaff] text-[#6f5ee6] text-sm font-medium hover:bg-[#e1dcff] transition"
+                  >
+                    Share
+                  </button>
+                </div>
+              </div>
+            </article>
+          </section>
+        </section>
+
+        <aside
+          class="space-y-4 h-max rounded-2xl bg-white/70 backdrop-blur border border-black/5 shadow-sm p-5"
+        >
+          <h3 class="font-semibold">Trending tags</h3>
+          <div class="flex flex-wrap gap-2">
+            <a
+              href="#"
+              class="px-3 py-1 rounded-full bg-[#edeaff] text-[#6f5ee6] border border-[#e1dcff] text-sm font-medium hover:bg-[#e1dcff]"
+              >#Calm</a
+            >
+            <a
+              href="#"
+              class="px-3 py-1 rounded-full bg-[#edeaff] text-[#6f5ee6] border border-[#e1dcff] text-sm font-medium hover:bg-[#e1dcff]"
+              >#Beige</a
+            >
+            <a
+              href="#"
+              class="px-3 py-1 rounded-full bg-[#edeaff] text-[#6f5ee6] border border-[#e1dcff] text-sm font-medium hover:bg-[#e1dcff]"
+              >#Wellness</a
+            >
+            <a
+              href="#"
+              class="px-3 py-1 rounded-full bg-[#edeaff] text-[#6f5ee6] border border-[#e1dcff] text-sm font-medium hover:bg-[#e1dcff]"
+              >#Minimal</a
+            >
+          </div>
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>

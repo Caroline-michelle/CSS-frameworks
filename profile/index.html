@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile | Memo</title>
+
+    <link rel="stylesheet" href="../src/style.css" />
+  </head>
+
+  <body class="min-h-screen bg-[#f6f5ff] text-[#2b2b2b] font-sans">
+    <header
+      class="sticky top-0 z-30 backdrop-blur bg-cover bg-[center_45%] border-b border-black/10 text-white"
+      style="background-image: url('/images/login-bakgrunn2.jpg')"
+    >
+      <nav
+        class="relative mx-auto max-w-6xl px-4 h-16 flex items-center gap-4 z-10"
+        aria-label="Primary"
+      >
+        <a
+          href="/feed/index.html"
+          class="font-semibold text-white hover:text-[#cfc8ff] transition"
+        >
+          Memo
+        </a>
+
+        <form class="hidden sm:flex flex-1" role="search" aria-label="Search">
+          <label for="q" class="sr-only">Search</label>
+          <input
+            id="q"
+            type="search"
+            placeholder="Search..."
+            class="w-full rounded-full border border-white/40 bg-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-[#c8c1ff] px-4 py-2 text-sm"
+          />
+        </form>
+
+        <nav class="ml-auto flex items-center gap-2">
+          <a
+            href="/feed/index.html"
+            class="px-4 py-2 rounded-lg bg-[#edeaff] text-[#6f5ee6] font-medium hover:bg-[#e1dcff] transition"
+          >
+            Feed
+          </a>
+
+          <a
+            href="/index.html"
+            class="px-4 py-2 rounded-lg border border-white/40 text-white/90 font-medium hover:bg-white/10 hover:border-white/60 transition"
+          >
+            Logout
+          </a>
+        </nav>
+      </nav>
+    </header>
+
+    <main class="mx-auto max-w-4xl px-4 py-10 space-y-8">
+      <section
+        class="rounded-2xl bg-white/70 backdrop-blur border border-black/5 shadow-sm p-8 flex flex-col items-center text-center space-y-4"
+        aria-labelledby="profile-heading"
+      >
+        <div class="flex justify-center">
+          <span
+            class="block w-28 h-28 rounded-full p-[3px] bg-gradient-to-br from-[#c4b5fd] via-[#a78bfa] to-[#f0abfc]"
+            aria-hidden="true"
+          >
+            <img
+              src="/public/images/Caroline.JPG"
+              alt="Profile avatar"
+              class="w-full h-full rounded-full bg-white p-[3px] object-cover shadow-md"
+            />
+          </span>
+        </div>
+
+        <h1 id="profile-heading" class="text-2xl font-semibold">@Memo_user</h1>
+
+        <p class="text-sm text-black/70 leading-relaxed max-w-md">
+          Frontend student • Bergen, Norway
+          <br />
+          Love taking photos and creating design
+        </p>
+
+        <div class="flex items-center justify-center gap-6 text-sm mt-3">
+          <div><span class="font-semibold">3.6k</span> Followers</div>
+          <div><span class="font-semibold">545k</span> Following</div>
+        </div>
+
+        <div class="mt-4 flex gap-3">
+          <button
+            class="px-5 py-2 rounded-lg bg-[#6f5ee6] text-white text-sm font-medium hover:bg-[#5c4dd1] transition"
+          >
+            Follow
+          </button>
+          <button
+            class="px-5 py-2 rounded-lg border border-[#e6e4ff] bg-white text-sm font-medium hover:bg-[#f7f6ff]"
+          >
+            Message
+          </button>
+        </div>
+      </section>
+
+      <section class="space-y-6" aria-label="Posts">
+        <article
+          class="rounded-2xl bg-white/70 backdrop-blur border border-black/5 shadow-sm overflow-hidden"
+        >
+          <div class="p-5">
+            <h3 class="font-medium text-lg">Morning Monday</h3>
+            <p class="text-sm text-black/80 mt-1">
+              Starting the week with tea and quiet focus💜
+            </p>
+
+            <div class="mt-5 flex gap-3">
+              <button
+                class="flex-1 py-2 rounded-lg bg-[#edeaff] text-[#6f5ee6] text-sm font-medium hover:bg-[#e1dcff] transition"
+              >
+                Like
+              </button>
+              <button
+                class="flex-1 py-2 rounded-lg bg-[#edeaff] text-[#6f5ee6] text-sm font-medium hover:bg-[#e1dcff] transition"
+              >
+                Comment
+              </button>
+              <button
+                class="flex-1 py-2 rounded-lg bg-[#edeaff] text-[#6f5ee6] text-sm font-medium hover:bg-[#e1dcff] transition"
+              >
+                Share
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="rounded-2xl bg-white/70 backdrop-blur border border-black/5 shadow-sm overflow-hidden"
+        >
+          <div class="p-5">
+            <h3 class="font-medium text-lg">Evening reset</h3>
+            <p class="text-sm text-black/80 mt-1">
+              Music in my ears and northern lights in the night sky ✨
+            </p>
+
+            <div class="mt-5 flex gap-3">
+              <button
+                class="flex-1 py-2 rounded-lg bg-[#edeaff] text-[#6f5ee6] text-sm font-medium hover:bg-[#e1dcff] transition"
+              >
+                Like
+              </button>
+              <button
+                class="flex-1 py-2 rounded-lg bg-[#edeaff] text-[#6f5ee6] text-sm font-medium hover:bg-[#e1dcff] transition"
+              >
+                Comment
+              </button>
+              <button
+                class="flex-1 py-2 rounded-lg bg-[#edeaff] text-[#6f5ee6] text-sm font-medium hover:bg-[#e1dcff] transition"
+              >
+                Share
+              </button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
